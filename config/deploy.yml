@@ -1,0 +1,14 @@
+development:
+  host: defibrillatori.locomotivehosting.com
+  api_key: 8e43e51ae840d3fa9cb5dc287c73e23c113ff2ad
+  ssl: true
+staging:
+  host: staging.example.com
+  email: john@doe.net
+  password: apassword
+  # api_key: <your api key here>
+production:
+  host: www.example.com
+  email: john@doe.net
+  password: apassword
+  # api_key: <your api key here>
