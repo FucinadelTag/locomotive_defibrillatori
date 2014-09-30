@@ -1,0 +1,83 @@
+---
+name: Righe Preventivo
+slug: righe_preventivo
+label_field_name: titolo
+order_by: created_at
+order_direction: desc
+fields:
+- titolo:
+    label: Titolo
+    type: string
+    required: true
+    unique: false
+    localized: false
+- nome_prodotto:
+    label: Nome Prodotto
+    type: string
+    required: true
+    unique: false
+    localized: false
+- descrizione:
+    label: Descrizione
+    type: text
+    required: true
+    unique: false
+    localized: false
+    text_formatting: html
+- prezzo:
+    label: Prezzo
+    type: float
+    required: true
+    unique: false
+    localized: false
+- quantita:
+    label: Quantita
+    type: integer
+    required: true
+    unique: false
+    localized: false
+- percentuale_sconto:
+    label: "% Sconto"
+    type: integer
+    required: true
+    unique: false
+    localized: false
+- importo_sconto:
+    label: Importo Sconto
+    type: float
+    required: false
+    unique: false
+    localized: false
+- prezzo_unitario_scontato:
+    label: Prezzo Unitario Scontato
+    type: float
+    required: false
+    unique: false
+    localized: false
+- prezzo_totale:
+    label: Prezzo Totale
+    type: float
+    required: false
+    unique: false
+    localized: false
+- preventivo:
+    label: Preventivo
+    type: belongs_to
+    required: false
+    unique: false
+    localized: false
+    class_name: preventivi
+    ui_enabled: true
+- podio_item_id:
+    label: podio_item_id
+    type: integer
+    required: false
+    unique: false
+    localized: false
+- public_id:
+    label: public_id
+    type: text
+    required: false
+    unique: false
+    localized: false
+    text_formatting: none

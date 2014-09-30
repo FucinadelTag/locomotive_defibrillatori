@@ -1,0 +1,40 @@
+---
+name: Documenti
+slug: documenti
+label_field_name: nome
+order_by: created_at
+order_direction: asc
+fields:
+- nome:
+    label: Nome
+    type: string
+    required: true
+    unique: false
+    localized: false
+- descrizione:
+    label: Descrizione
+    type: text
+    required: false
+    unique: false
+    localized: false
+    text_formatting: html
+- public_url:
+    label: Public Url
+    type: string
+    required: false
+    unique: false
+    localized: false
+- preventivo:
+    label: Preventivo
+    type: belongs_to
+    required: false
+    unique: false
+    localized: false
+    class_name: preventivi
+    ui_enabled: true
+- podio_item_id:
+    label: podio_item_id
+    type: integer
+    required: false
+    unique: false
+    localized: false

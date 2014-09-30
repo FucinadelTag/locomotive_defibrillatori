@@ -1,0 +1,77 @@
+---
+name: Preventivi
+slug: preventivi
+label_field_name: titolo
+order_by: created_at
+order_direction: desc
+fields:
+- titolo:
+    label: Titolo
+    type: string
+    required: true
+    unique: false
+    localized: false
+- messaggio:
+    label: Messaggio
+    type: text
+    required: false
+    unique: false
+    localized: false
+    text_formatting: html
+- righe_preventivo:
+    label: Righe Preventivo
+    type: has_many
+    required: false
+    unique: false
+    localized: false
+    class_name: righe_preventivo
+    inverse_of: preventivo
+    ui_enabled: true
+- note:
+    label: Note
+    type: text
+    required: false
+    unique: false
+    localized: false
+    text_formatting: html
+- imponibile:
+    label: Imponibile
+    type: float
+    required: false
+    unique: false
+    localized: false
+- iva:
+    label: IVA (22%)
+    type: float
+    required: false
+    unique: false
+    localized: false
+- totale_iva_inclusa:
+    label: Totale (IVA Inclusa)
+    type: float
+    required: false
+    unique: false
+    localized: false
+- documenti:
+    label: Documenti
+    type: has_many
+    required: false
+    unique: false
+    localized: false
+    class_name: documenti
+    inverse_of: preventivo
+    ui_enabled: true
+- cliente:
+    label: Cliente
+    type: belongs_to
+    required: false
+    unique: false
+    localized: false
+    class_name: clienti
+    ui_enabled: true
+- podio_item_id:
+    label: podio_item_id
+    type: integer
+    required: false
+    unique: false
+    localized: false

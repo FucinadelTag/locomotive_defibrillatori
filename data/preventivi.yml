@@ -1,0 +1,17 @@
+---
+- Preventivo pre0000037:
+    _slug: preventivo-pre0000037
+    messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
+    note: "<p>Provaccia note</p>"
+    imponibile: 2480.0
+    iva: 545.6
+    totale_iva_inclusa: 3025.6
+    podio_item_id: 201669709
+- Preventivo pre0000036:
+    _slug: preventivo-pre0000036
+    messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
+    note: "<p>Provaccia note</p>"
+    imponibile: 2480.0
+    iva: 545.6
+    totale_iva_inclusa: 3025.6
+    podio_item_id: 201669686

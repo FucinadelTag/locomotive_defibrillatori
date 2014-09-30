@@ -1,0 +1,64 @@
+---
+name: Clienti
+slug: clienti
+label_field_name: nome_e_cognome
+order_by: created_at
+order_direction: asc
+fields:
+- nome_e_cognome:
+    label: Nome e Cognome
+    type: string
+    required: true
+    unique: false
+    localized: false
+- ragione_sociale:
+    label: Ragione Sociale
+    type: string
+    required: false
+    unique: false
+    localized: false
+- email:
+    label: Email
+    type: email
+    required: true
+    unique: false
+    localized: false
+- telefono:
+    label: Telefono
+    type: string
+    required: false
+    unique: false
+    localized: false
+- regione:
+    label: Regione
+    type: string
+    required: false
+    unique: false
+    localized: false
+- categoria:
+    label: Categoria
+    type: string
+    required: false
+    unique: false
+    localized: false
+- lead_id:
+    label: Lead ID
+    type: integer
+    required: false
+    unique: false
+    localized: false
+- preventivi:
+    label: Preventivi
+    type: has_many
+    required: false
+    unique: false
+    localized: false
+    class_name: preventivi
+    inverse_of: cliente
+    ui_enabled: true
+- podio_item_id:
+    label: podio_item_id
+    type: integer
+    required: false
+    unique: false
+    localized: false
