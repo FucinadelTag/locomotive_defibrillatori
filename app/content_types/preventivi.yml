@@ -5,6 +5,12 @@ label_field_name: titolo
 order_by: created_at
 order_direction: desc
 fields:
+- titolo_leggibile:
+    label: Titolo Leggibile
+    type: string
+    required: false
+    unique: false
+    localized: false
 - titolo:
     label: Titolo
     type: string

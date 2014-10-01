@@ -1,17 +1,21 @@
 ---
-- Preventivo pre0000037:
-    _slug: preventivo-pre0000037
+- '202035670':
+    _slug: '202035670'
+    titolo_leggibile: Preventivo pre0000045
     messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
     note: "<p>Provaccia note</p>"
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    podio_item_id: 201669709
-- Preventivo pre0000036:
-    _slug: preventivo-pre0000036
+    cliente: lorenzo-caldara
+    podio_item_id: 202035670
+- '202035577':
+    _slug: '202035577'
+    titolo_leggibile: Preventivo pre0000044
     messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
     note: "<p>Provaccia note</p>"
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    podio_item_id: 201669686
+    cliente: lorenzo-caldara
+    podio_item_id: 202035577

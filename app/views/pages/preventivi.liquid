@@ -10,13 +10,11 @@ position: 1
 {% extends parent %}
 
 {% block main %}
-  <div class="posts">
     {% for preventivo in contents.preventivi %}
-      <div class="post-listing">
-        <h3>{{ preventivo.titolo | escape }}</h3>
-        <div class="teaser">{{ preventivo.messaggio }}</div>
-        <p><a href="/preventivi/{{ preventivo._slug }}">Read More</a></p>
-      </div>
+        <div class="post-listing">
+            <h3>{{ preventivo.titolo_leggibile | escape }}</h3>
+                <div class="teaser">{{ preventivo.messaggio }}</div>
+                <p><a href="/preventivi/{{ preventivo._slug }}">Read More</a></p>
+        </div>
     {% endfor %}
-  </div>
 {% endblock %}

@@ -10,6 +10,8 @@ published: true
 # position among sibling pages
 # position: 1
 
+slug: clienti
+
 # sets a redirection to the given url (301)
 # redirect_url: "<url to a page or to a remote url>"
 
@@ -23,7 +25,12 @@ published: true
 {% extends parent %}
 
 {% block main %}
-
-  <p>Hello world</p>
-
+  <div class="posts">
+    {% for cliente in contents.clienti %}
+      <div class="post-listing">
+        <h3>{{ cliente.nome_e_cognome | escape }}</h3>
+        <p><a href="/clienti/{{ cliente._slug }}">Read More</a></p>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

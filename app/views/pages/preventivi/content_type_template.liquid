@@ -1,0 +1,70 @@
+---
+title: Content type template
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# content type that this page is templatizing
+content_type: preventivi
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+
+{% capture titolo_pagina %}
+    {{ preventivi.titolo_leggibile | escape }}
+{% endcapture %}
+
+{% extends parent %}
+
+
+
+{% block main %}
+
+        <h1>{{ titolo_pagina }}</h1>
+
+        <hr />
+
+        <div class="panel">
+            <h5><i>Bologna, {{ preventivi.created_at | localized_date: '%d-%b-%Y' }}</i></h5>
+            <p>{{ preventivi.messaggio}}</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th width="70%">Nome/Descrizione</th>
+                    <th style="text-align:right" width="10%">Prezzo</th>
+                    <th style="text-align:right" width="10%">Quantità</th>
+                    <th style="text-align:right" width="10%">Sconto</th>
+                    <th style="text-align:right" width="10%">Subtotale</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for riga_preventivo in preventivi.righe_preventivo %}
+                    <tr>
+                        <td><h5>{{riga_preventivo.nome_prodotto}}</h4></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo}}</h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.quantita}}</h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.percentuale_sconto}}%</h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}}</h5></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">{{riga_preventivo.descrizione}}</td>
+                        <td colspan="2"></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}

@@ -1,29 +1,5 @@
 ---
 - 'Defibrillatore Philips FRX - Sconto: 38% - Qty: 1':
-    _slug: defibrillatore-philips-frx-sconto-38-percent-qty-1
-    nome_prodotto: Defibrillatore Philips FRX
-    descrizione: "<p>Bellissimo e fighissimo</p>"
-    prezzo: 2000.0
-    quantita: 1
-    percentuale_sconto: 38
-    importo_sconto: 760.0
-    prezzo_unitario_scontato: 1240.0
-    prezzo_totale: 1240.0
-    podio_item_id: 201669708
-    public_id: ROW000000000070
-- 'Defibrillatore Philips HS1 - Sconto: 38% - Qty: 1':
-    _slug: defibrillatore-philips-hs1-sconto-38-percent-qty-1
-    nome_prodotto: Defibrillatore Philips HS1
-    descrizione: "<p>Bellissimo e fighissimo</p>"
-    prezzo: 2000.0
-    quantita: 1
-    percentuale_sconto: 38
-    importo_sconto: 760.0
-    prezzo_unitario_scontato: 1240.0
-    prezzo_totale: 1240.0
-    podio_item_id: 201669707
-    public_id: ROW000000000069
-- 'Defibrillatore Philips FRX - Sconto: 38% - Qty: 1':
     _slug: defibrillatore-philips-frx-sconto-38-percent-qty-2
     nome_prodotto: Defibrillatore Philips FRX
     descrizione: "<p>Bellissimo e fighissimo</p>"
@@ -33,8 +9,9 @@
     importo_sconto: 760.0
     prezzo_unitario_scontato: 1240.0
     prezzo_totale: 1240.0
-    podio_item_id: 201669683
-    public_id: ROW000000000068
+    preventivo: '202035670'
+    podio_item_id: 202035652
+    public_id: ROW000000000086
 - 'Defibrillatore Philips HS1 - Sconto: 38% - Qty: 1':
     _slug: defibrillatore-philips-hs1-sconto-38-percent-qty-2
     nome_prodotto: Defibrillatore Philips HS1
@@ -45,5 +22,32 @@
     importo_sconto: 760.0
     prezzo_unitario_scontato: 1240.0
     prezzo_totale: 1240.0
-    podio_item_id: 201669681
-    public_id: ROW000000000067
+    preventivo: '202035670'
+    podio_item_id: 202035626
+    public_id: ROW000000000085
+- 'Defibrillatore Philips FRX - Sconto: 38% - Qty: 1':
+    _slug: defibrillatore-philips-frx-sconto-38-percent-qty-1
+    nome_prodotto: Defibrillatore Philips FRX
+    descrizione: "<p>Bellissimo e fighissimo</p>"
+    prezzo: 2000.0
+    quantita: 1
+    percentuale_sconto: 38
+    importo_sconto: 760.0
+    prezzo_unitario_scontato: 1240.0
+    prezzo_totale: 1240.0
+    preventivo: '202035577'
+    podio_item_id: 202035575
+    public_id: ROW000000000084
+- 'Defibrillatore Philips HS1 - Sconto: 38% - Qty: 1':
+    _slug: defibrillatore-philips-hs1-sconto-38-percent-qty-1
+    nome_prodotto: Defibrillatore Philips HS1
+    descrizione: "<p>Bellissimo e fighissimo</p>"
+    prezzo: 2000.0
+    quantita: 1
+    percentuale_sconto: 38
+    importo_sconto: 760.0
+    prezzo_unitario_scontato: 1240.0
+    prezzo_totale: 1240.0
+    preventivo: '202035577'
+    podio_item_id: 202035572
+    public_id: ROW000000000083

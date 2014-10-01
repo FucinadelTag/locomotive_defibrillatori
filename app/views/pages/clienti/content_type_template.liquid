@@ -1,8 +1,8 @@
 ---
-title: Content type template
+title: Cliente Template
 
 # true if the page is included in the menu
-listed: true
+listed: false
 
 # true if the page is published
 published: true
@@ -14,7 +14,7 @@ published: true
 # redirect_url: "<url to a page or to a remote url>"
 
 # content type that this page is templatizing
-# content_type: "<slug of one of the content types>"
+content_type: clienti
 
 # editable_elements:
 #   'some_block/some_slug': "<text>"
@@ -24,6 +24,16 @@ published: true
 
 {% block main %}
 
-  <p>Hello world</p>
+  <h3>{{ clienti.nome_e_cognome | escape }}</h3>
+
+    <div class="posts">
+    {% for preventivo in contents.preventivi %}
+      <div class="post-listing">
+        <h3>{{ preventivo.titolo_leggibile | escape }}</h3>
+        <div class="teaser">{{ preventivo.messaggio }}</div>
+        <p><a href="/preventivi/{{ preventivo._slug }}">Read More</a></p>
+      </div>
+    {% endfor %}
+    </div>
 
 {% endblock %}
