@@ -6,3 +6,9 @@
 
 // Use Zurb Foundation
 @import "foundation";
+
+header {
+  @include grid-row;
+  padding-top: em-calc(10px);
+
+}

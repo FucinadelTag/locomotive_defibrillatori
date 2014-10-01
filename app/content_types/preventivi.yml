@@ -81,3 +81,9 @@ fields:
     required: false
     unique: false
     localized: false
+- public_id:
+    label: Public Id
+    type: string
+    required: false
+    unique: false
+    localized: false

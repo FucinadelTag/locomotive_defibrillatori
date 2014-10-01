@@ -24,6 +24,12 @@ content_type: preventivi
 {% capture titolo_pagina %}
     {{ preventivi.titolo_leggibile | escape }}
 {% endcapture %}
+{% capture codice_preventivo %}
+    {{ preventivi.public_id | escape }}
+{% endcapture %}
+{% capture data_preventivo %}
+    {{ preventivi.created_at | localized_date: '%d-%b-%Y' }}
+{% endcapture %}
 
 {% extends parent %}
 
@@ -31,14 +37,15 @@ content_type: preventivi
 
 {% block main %}
 
-        <h1>{{ titolo_pagina }}</h1>
-
         <hr />
 
         <div class="panel">
-            <h5><i>Bologna, {{ preventivi.created_at | localized_date: '%d-%b-%Y' }}</i></h5>
+            <h5><i>Bologna, {{ data_preventivo }}</i></h5>
             <p>{{ preventivi.messaggio}}</p>
         </div>
+
+        <h2 class="subheader">{{ titolo_pagina }}:</h2>
+
 
         <table>
             <thead>
@@ -64,7 +71,26 @@ content_type: preventivi
                         <td colspan="2"></td>
                     </tr>
                 {% endfor %}
+                    <tr>
+                        <td style="text-align:right" colspan="3">Imponibile</td>
+                        <td style="text-align:right" colspan="2"><h5>{{preventivi.imponibile}}</h5></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right" colspan="3">IVA 22%</td>
+                        <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}}</h5></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right" colspan="3"><h4>TOTALE:</h4></td>
+                        <td style="text-align:right" colspan="2"><h4>{{preventivi.totale_iva_inclusa}}</h4></td>
+                    </tr>
             </tbody>
         </table>
+
+        <div class="panel">
+            <h5><i>Preventivo inviato da:</i></h5>
+            <strong>Giulio Locatelli</strong><br/>
+            Telefono: <strong>800 782 217</strong><br/>
+            Email: <strong>giulio.locatelli@defibrillatori-online.com</strong>
+        </div>
 
 {% endblock %}
