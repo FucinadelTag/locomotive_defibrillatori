@@ -18,9 +18,7 @@ position: 0
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     {{ 'app.css' | stylesheet_tag }}
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    {{ 'vendor/modernizr.js' | javascript_tag }}
   </head>
   <body>
 
@@ -28,23 +26,45 @@ position: 0
 
 
     <header>
+            <div data-magellan-arrival="top" id="top" class="large-3 magellan-container" data-magellan-expedition="fixed" data-options="destination_threshold:65;throttle_delay:0;">
+                    <ul class="sub-nav">
+
+                        <li data-magellan-arrival="top">
+                            <a href="#top"><img alt="Defibrillatori Philips" src="https://lh3.googleusercontent.com/-g4HJf2yMKsE/U02kMhfilgI/AAAAAAAAl0E/KJAx2bDXdTk/w150-h44-no/logo_piccolo.png"/></a>
+                        </li>
+                        <li data-magellan-arrival="documentazione">
+                            <a href="#documentazione">Documentazione</a>
+                        </li>
+                        <li data-magellan-arrival="comeOrdinare">
+                            <a href="#comeOrdinare">Come Ordinare</a>
+                        </li>
+                        <li data-magellan-arrival="contatti">
+                            <a href="#contatti">Contatti</a>
+                        </li>
+                         <li data-magellan-arrival="formOrdine">
+                            <a href="#formOrdine">Ordina Online</a>
+                        </li>
+                    </ul>
+            </div>
 
             <div class="large-3 medium-3 small-6 columns end">
-                <img alt="Defibrillatori Philips" src="https://lh3.googleusercontent.com/-g4HJf2yMKsE/U02kMhfilgI/AAAAAAAAl0E/KJAx2bDXdTk/w150-h44-no/logo_piccolo.png"/></li>
-                <br />
                 <i>
+                IREDEEM SRL<br />
                 Via Cesare Boldrini 20<br />
                 40121 Bologna<br />
                 P.IVA: 10574970017</i><br />
             </div>
 
             <div class="large-3 medium-3 small-3 columns right">
-                <h4>Preventivo</h4>
-                Codice: <strong>{{ codice_preventivo }}</strong><br />
-                Data: <strong>{{ data_preventivo }}</strong><br />
-                Validità: <strong>90 Giorni</strong>
+                <i>
+                    <h4>Preventivo</h4>
+                    Codice: <strong>{{ codice_preventivo }}</strong><br />
+                    Data: <strong>{{ data_preventivo }}</strong><br />
+                    Validità: <strong>90 Giorni</strong>
+                </i>
             </div>
     </header>
+
 
 
 
@@ -54,6 +74,8 @@ position: 0
 
 
     <div class="large-12 columns">
+
+
 
 
       {% block main %}
@@ -74,15 +96,32 @@ position: 0
     <div class="large-12 columns">
       <hr/>
       <div class="row">
-        <div class="large-12 columns">
-          <p>© Copyright no one at all. Go to town.</p>
+        <div class="large-3 columns">
+          <img src="http://lh6.googleusercontent.com/-znUVyJZm73E/U3mY94YJ0WI/AAAAAAAAmRo/JR4IpRmwXHg/h61-no/distributore_ufficiale.png"/>
+        </div>
+        <div class="large-3 columns">
+          <i>Preventivo {{ codice_preventivo }}</i>
         </div>
     </div>
   </footer>
 
 
     <!-- Javascripts -->
-    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    {{ 'bootstrap.min.js' | javascript_tag }}
+    {{ 'vendor/jquery.js' | javascript_tag }}
+    {{ 'foundation.min.js' | javascript_tag }}
+    {{ 'foundation/foundation.magellan.js' | javascript_tag }}
+    <script>
+        $(document).foundation({
+            "magellan-expedition": {
+                active_class: 'active', // specify the class used for active sections
+                threshold: 0, // how many pixels until the magellan bar sticks, 0 = auto
+                destination_threshold: 20, // pixels from the top of destination for it to be considered active
+                throttle_delay: 50, // calculation throttling to increase framerate
+                fixed_top: 0, // top distance in pixels assigned to the fixed element on scroll
+            }
+
+        });
+
+    </script>
   </body>
 </html>

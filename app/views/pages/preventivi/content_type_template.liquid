@@ -21,25 +21,30 @@ content_type: preventivi
 #   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
 ---
 
+{% capture numero_fax %}
+    800 782 217
+{% endcapture %}
+
 {% capture titolo_pagina %}
     {{ preventivi.titolo_leggibile | escape }}
 {% endcapture %}
-{% capture codice_preventivo %}
-    {{ preventivi.public_id | escape }}
-{% endcapture %}
+{% capture codice_preventivo %}{{ preventivi.public_id | escape }}{% endcapture %}
 {% capture data_preventivo %}
     {{ preventivi.created_at | localized_date: '%d-%b-%Y' }}
 {% endcapture %}
 
+{% capture defaultValues %}
+    'field123={{preventivi.cliente.email}}&field121={{codice_preventivo}}&Field119={{preventivi.cliente.ragione_sociale}}&field340={{preventivi.totale_iva_inclusa}}&Field363=Italia'
+{% endcapture %}
+
 {% extends parent %}
 
-
+{{defaultValues}}
 
 {% block main %}
-
         <hr />
 
-        <div class="panel">
+        <div>
             <h5><i>Bologna, {{ data_preventivo }}</i></h5>
             <p>{{ preventivi.messaggio}}</p>
         </div>
@@ -50,7 +55,7 @@ content_type: preventivi
         <table>
             <thead>
                 <tr>
-                    <th width="70%">Nome/Descrizione</th>
+                    <th width="70%">Nome/Descrizione prodotti</th>
                     <th style="text-align:right" width="10%">Prezzo</th>
                     <th style="text-align:right" width="10%">Quantità</th>
                     <th style="text-align:right" width="10%">Sconto</th>
@@ -80,17 +85,177 @@ content_type: preventivi
                         <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}}</h5></td>
                     </tr>
                     <tr>
-                        <td style="text-align:right" colspan="3"><h4>TOTALE:</h4></td>
-                        <td style="text-align:right" colspan="2"><h4>{{preventivi.totale_iva_inclusa}}</h4></td>
+                        <td style="text-align:right" colspan="3"><h3>TOTALE:</h3></td>
+                        <td style="text-align:right" colspan="2"><h3>{{preventivi.totale_iva_inclusa}}</h3></td>
                     </tr>
             </tbody>
         </table>
-
+        <hr>
+        <a name="documentazione"></a>
+        <h2 class="subheader" data-magellan-arrival="documentazione" id="documentazione">Documentazione allegata:</h2>
         <div class="panel">
-            <h5><i>Preventivo inviato da:</i></h5>
+
+
+            <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
+                {% for documento in preventivi.documenti %}
+                    <li>
+                        <h5>{{documento.nome}}</h5>
+                        <p>
+                            {{documento.descrizione}}
+                        </p>
+                        <a href="{{documento.public_url}}" target="_blank">Apri il documento</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <p><i>Di seguito l'elenco dei consumabili e dei relativi costi sulla base del listino attualmente in vigore:</i></p>
+                <ol>
+                    <li>
+                        Batteria - durata 4 anni - costo €165+IVA
+                    </li>
+                    <li>
+                        Cartuccia elettrodi adulti - durata 2 anni - costo €65+IVA
+                    </li>
+                    <li>
+                        Cartuccia elettrodi pediatrici - durata 2 anni - costo €111+IVA
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 class="subheader" id="comeOrdinare">Come Ordinare:</h2>
+        <div class="panel">
+            <h4>Pagamento con Carta di Credito online</h4>
+            <hr>
+
+
+                <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1">
+                    <li>
+                        <i>Completa l'ordine Online:</i>
+                            <ol>
+                                <li>
+                                    Accertati di avere una delle seguenti carte di credito: <strong>VISA - MASTERCARD - AMERICAN EXPRESS</strong>
+                                </li>
+                                <li>
+                                    <a href="#formOrdine">Compila il modulo online in ogni sua parte</a>
+                                </li>
+                            </ol>
+                    </li>
+                </ul>
+        </div>
+        <div class="panel">
+            <h4>Pagamento con Bonifico Bancario</h4>
+            <hr>
+
+
+                <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
+                    <li>
+                        <i>Effettua il bonifico con i seguenti dati:</i>
+                            <ol>
+                                <li>
+                                    Importo: <strong>€ {{preventivi.totale_iva_inclusa}}</strong>
+                                </li>
+                                <li>
+                                    Titolare Conto: <strong>IREDEEM SRL</strong>
+                                </li>
+                                <li>
+                                    IBAN: <strong>IT39 U 02008 01046 000101927619</strong>
+                                </li>
+                                <li>
+                                    Istituto: <strong>UNICREDIT</strong>
+                                </li>
+                                <li>
+                                    Causale: <strong>Riferimento preventivo {{codice_preventivo}}</strong>
+                                </li>
+                            </ol>
+                    </li>
+                    <li>
+                        <i>Completa l'ordine Online:</i>
+                            <ol>
+                                <li>
+                                    <a href="#formOrdine">Compila il modulo online in ogni sua parte</a>
+                                </li>
+                            </ol>
+                        <hr>
+                        <i>Completa l'ordine via Fax:</i>
+                            <ol>
+                                <li>
+                                    Scarica il documento da compilare e firmare
+                                </li>
+                                <li>
+                                    Invia il documento e <strong>copia dei dati del bonifico</strong> al seguente numero di fax: <strong>{{numero_fax}}</strong>
+                                </li>
+                            </ol>
+
+                    </li>
+                </ul>
+        </div>
+        <div class="panel">
+            <h4>Locazione operativa</h4>
+            <hr>
+
+
+                <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1">
+                    <li>
+                        <i>Paga in 24 comode rate mensili:</i>
+                            <ol>
+                                <li>
+                                    Scarica il documento da compilare e firmare
+                                </li>
+                                <li>
+                                    Procurati tutti i documenti richiesti
+                                </li>
+                                <li>
+                                    Invia i documenti al seguente numero di fax: <strong>{{numero_fax}}</strong>
+                                </li>
+                                <li>
+                                    Attendi una conferma da parte della società finanziaria
+                                </li>
+                            </ol>
+                    </li>
+                </ul>
+        </div>
+        <hr>
+        <h2 class="subheader" id="contatti">Contatti:</h2>
+        <div class="panel">
+            <h5><i>Per qualsiasi dubbio o domanda rivolgersi a:</i></h5>
             <strong>Giulio Locatelli</strong><br/>
             Telefono: <strong>800 782 217</strong><br/>
             Email: <strong>giulio.locatelli@defibrillatori-online.com</strong>
         </div>
+
+        <hr>
+
+        <h2 id="formOrdine" class="subheader">ORDINA ONLINE:</h2>
+
+
+        <div class="panel">
+            Compila il form seguente:
+            <hr>
+            <div id="wufoo-s1qu9ed01frgsny">
+                Fill out my <a href="https://fucinadeltag.wufoo.com/forms/s1qu9ed01frgsny">online form</a>.
+                </div>
+                <script type="text/javascript">var s1qu9ed01frgsny;(function(d, t) {
+                var s = d.createElement(t), options = {
+                'userName':'fucinadeltag',
+                'formHash':'s1qu9ed01frgsny',
+                'defaultValues': {{defaultValues}},
+                'autoResize':true,
+                'height':'1354',
+                'async':true,
+                'host':'wufoo.com',
+                'header':'hide',
+                'ssl':true};
+                s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+                s.onload = s.onreadystatechange = function() {
+                var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                try { s1qu9ed01frgsny = new WufooForm();s1qu9ed01frgsny.initialize(options);s1qu9ed01frgsny.display(); } catch (e) {}};
+                var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+                })(document, 'script');</script>
+        </div>
+
+
 
 {% endblock %}
