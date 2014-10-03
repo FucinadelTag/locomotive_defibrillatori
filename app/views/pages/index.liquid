@@ -7,12 +7,12 @@ response_type: text/html
 position: 0
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>
-      {{ page.title }} - {{ site.name }}
+      {{ titolo_pagina }} - {{ site.name }}
       | {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ site.seo_title }}{% endif %}
     </title>
 
@@ -22,32 +22,34 @@ position: 0
   </head>
   <body>
 
-<div data-magellan-arrival="top" id="top" class=" magellan-container" data-magellan-expedition="fixed" data-options="destination_threshold:65;throttle_delay:0;">
-        <dl class="sub-nav">
+<div class="contain-to-grid sticky">
+<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+  <ul class="title-area">
+        <li class="name">
+            <h1><a href="#top">{{ titolo_pagina }}</a></h1>
+        </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
 
-            <dd data-magellan-arrival="top">
-                <a href="#top"><img alt="Defibrillatori Philips" src="https://lh3.googleusercontent.com/-g4HJf2yMKsE/U02kMhfilgI/AAAAAAAAl0E/KJAx2bDXdTk/w150-h44-no/logo_piccolo.png"/></a>
-            </dd>
-            <dd data-magellan-arrival="documentazione">
-                <a href="#documentazione">Documentazione</a>
-            </dd>
-            <dd data-magellan-arrival="comeOrdinare">
-                <a href="#comeOrdinare">Come Ordinare</a>
-            </dd>
-            <dd data-magellan-arrival="contatti">
-                <a href="#contatti">Contatti</a>
-            </dd>
-             <dd data-magellan-arrival="formOrdine">
-                <a href="#formOrdine">Ordina Online</a>
-            </dd>
-        </dl>
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li><a href="#top">Prezzi</a></li>
+            <li><a href="#documentazione">Documentazione</a></li>
+            <li><a href="#comeOrdinare">Come Ordinare</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+            <li><a href="#formOrdine">Ordina Online</a></li>
+        </ul>
+    </section>
+</nav>
 </div>
-
 
     <header>
 
 
             <div class="large-3 medium-3 small-6 columns end">
+                <img alt="Defibrillatori Philips" src="https://lh3.googleusercontent.com/-g4HJf2yMKsE/U02kMhfilgI/AAAAAAAAl0E/KJAx2bDXdTk/w150-h44-no/logo_piccolo.png"/><br />
                 <i>
                 IREDEEM SRL<br />
                 Via Cesare Boldrini 20<br />
@@ -109,7 +111,7 @@ position: 0
     <!-- Javascripts -->
     {{ 'vendor/jquery.js' | javascript_tag }}
     {{ 'foundation.min.js' | javascript_tag }}
-    {{ 'foundation/foundation.magellan.js' | javascript_tag }}
+    {{ 'foundation/foundation.topbar.js' | javascript_tag }}
     <script>
         $(document).foundation({
             "magellan-expedition": {

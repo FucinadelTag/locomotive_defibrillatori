@@ -1,6 +1,6 @@
 ---
 name: defibrillatori
-locales: [en]
+locales: [it]
 subdomain: defibrillatori
 domains: [defibrillatori.locomotivehosting.com]
 timezone: Rome
