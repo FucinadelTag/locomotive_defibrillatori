@@ -40,7 +40,7 @@ content_type: preventivi
             <p>{{ preventivi.messaggio}}</p>
         </div>
 
-        <h2><i class="fa fa-eur"></i> {{ titolo_pagina }}:</h2>
+        <h2><i class="fa fa-eur"></i> {{ titolo_pagina }}</h2>
 
 
         <table>
@@ -56,14 +56,14 @@ content_type: preventivi
             <tbody>
                 {% for riga_preventivo in preventivi.righe_preventivo %}
                     <tr>
-                        <td><h5>{{riga_preventivo.nome_prodotto}}</h4></td>
+                        <td><h5><i class="fa fa-check-circle-o"></i> {{riga_preventivo.nome_prodotto}}</h4></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.prezzo}} <i class="fa fa-eur"></i></h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.quantita}}</h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.percentuale_sconto}}%</h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}} <i class="fa fa-eur"></i></h5></td>
                     </tr>
                     <tr>
-                        <td colspan="3">{{riga_preventivo.descrizione}}</td>
+                        <td colspan="3"><i>{{riga_preventivo.descrizione}}</i></td>
                         <td colspan="2"></td>
                     </tr>
                 {% endfor %}
@@ -80,7 +80,7 @@ content_type: preventivi
         </table>
         <hr>
         <a name="documentazione"></a>
-        <h2 class="subheader"><i class="fa fa-folder-open-o"></i> Documentazione allegata:</h2>
+        <h2 class="subheader"><i class="fa fa-folder-open-o"></i> Documentazione allegata</h2>
         <div class="panel">
 
 
@@ -114,7 +114,7 @@ content_type: preventivi
         <hr>
 
         <a name="comeOrdinare"></a>
-        <h2 class="subheader"><i class="fa fa-shopping-cart"></i> Come Ordinare:</h2>
+        <h2 class="subheader"><i class="fa fa-shopping-cart"></i> Come Ordinare</h2>
         <div class="panel">
             <h4><i class="fa fa-credit-card"></i> Pagamento con Carta di Credito online</h4>
             <hr>
@@ -211,7 +211,7 @@ content_type: preventivi
         </div>
         <hr>
         <a name="contatti"></a>
-        <h2 class="subheader"><i class="fa fa-envelope-o"></i> Contatti:</h2>
+        <h2 class="subheader"><i class="fa fa-envelope-o"></i> Contatti</h2>
         <div class="panel">
             <h5><i>Per qualsiasi dubbio o domanda rivolgersi a:</i></h5>
             <strong>Giulio Locatelli</strong><br/>
@@ -222,7 +222,7 @@ content_type: preventivi
         <hr>
 
         <a name="formOrdine"></a>
-        <h2 class="subheader"><i class="fa fa-keyboard-o"></i> ORDINA ONLINE:</h2>
+        <h2 class="subheader"><i class="fa fa-keyboard-o"></i> Ordina online</h2>
 
 
         <div class="panel">
