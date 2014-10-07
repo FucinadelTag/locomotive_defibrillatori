@@ -35,6 +35,9 @@ content_type: preventivi
 {% block main %}
         <hr />
 
+    <div class="noPagBreak">
+
+
         <div class="tesxtLowColor">
             <i>Bologna, {{ data_preventivo }}</i>
             <p>{{ preventivi.messaggio}}</p>
@@ -46,8 +49,8 @@ content_type: preventivi
         <table>
             <thead>
                 <tr>
-                    <th width="70%">Nome/Descrizione prodotti</th>
-                    <th style="text-align:right" width="10%">Prezzo</th>
+                    <th width="65%">Nome/Descrizione prodotti</th>
+                    <th style="text-align:right" width="15%">Prezzo</th>
                     <th style="text-align:right" width="5%">Quantità</th>
                     <th style="text-align:right" width="5%">Sconto</th>
                     <th style="text-align:right" width="10%">Subtotale</th>
@@ -57,10 +60,10 @@ content_type: preventivi
                 {% for riga_preventivo in preventivi.righe_preventivo %}
                     <tr>
                         <td><h5><i class="fa fa-check-circle-o"></i> {{riga_preventivo.nome_prodotto}}</h4></td>
-                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo}} <i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo}}<i class="fa fa-eur"></i></h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.quantita}}</h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.percentuale_sconto}}%</h5></td>
-                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}} <i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}}<i class="fa fa-eur"></i></h5></td>
                     </tr>
                     <tr>
                         <td colspan="3"><i>{{riga_preventivo.descrizione}}</i></td>
@@ -69,16 +72,18 @@ content_type: preventivi
                 {% endfor %}
                     <tr>
                         <td style="text-align:right" colspan="3">Imponibile</td>
-                        <td style="text-align:right" colspan="2"><h5>{{preventivi.imponibile}} <i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right" colspan="2"><h5>{{preventivi.imponibile}}<i class="fa fa-eur"></i></h5></td>
                     </tr>
                     <tr>
                         <td style="text-align:right" colspan="3">IVA 22%</td>
-                        <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}} <i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}}<i class="fa fa-eur"></i></h5></td>
                     </tr>
                     {{ riga_totale }}
             </tbody>
         </table>
         <hr>
+    </div>
+    <div class="noPagBreak">
         <a name="documentazione"></a>
         <h2 class="subheader"><i class="fa fa-folder-open-o"></i> Documentazione allegata</h2>
         <div class="panel">
@@ -112,6 +117,8 @@ content_type: preventivi
         </div>
 
         <hr>
+    </div>
+    <div class="noPagBreak">
 
         <a name="comeOrdinare"></a>
         <h2 class="subheader"><i class="fa fa-shopping-cart"></i> Come Ordinare</h2>
@@ -210,6 +217,9 @@ content_type: preventivi
                 </ul>
         </div>
         <hr>
+    </div>
+    <div class="noPagBreak">
+
         <a name="contatti"></a>
         <h2 class="subheader"><i class="fa fa-envelope-o"></i> Contatti</h2>
         <div class="panel">
@@ -220,6 +230,8 @@ content_type: preventivi
         </div>
 
         <hr>
+    </div>
+    <div class="noPagBreak">
 
         <a name="formOrdine"></a>
         <h2 class="subheader"><i class="fa fa-keyboard-o"></i> Ordina online</h2>
@@ -250,6 +262,6 @@ content_type: preventivi
                 })(document, 'script');</script>
         </div>
 
-
+    </div>
 
 {% endblock %}

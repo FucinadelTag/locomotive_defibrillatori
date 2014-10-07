@@ -23,3 +23,7 @@ header {
     color: $subheader-font-color;
 }
 
+.noPagBreak {
+    page-break-inside: avoid;
+}
+
