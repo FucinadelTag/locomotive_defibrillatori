@@ -6,6 +6,13 @@ cache_strategy: none
 response_type: text/html
 position: 0
 ---
+
+{% if params['pdf'] == '1'%}
+  {% assign isPdf = 1 %}
+{% else %}
+  {% assign isPdf = 0 %}
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="it">
   <head>
@@ -23,6 +30,7 @@ position: 0
   </head>
   <body>
 
+{% if isPdf == 0 %}
 <div class="contain-to-grid sticky">
 <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
   <ul class="title-area">
@@ -45,6 +53,7 @@ position: 0
     </section>
 </nav>
 </div>
+{% endif %}
 
     <header>
 

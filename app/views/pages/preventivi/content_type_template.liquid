@@ -33,7 +33,7 @@ content_type: preventivi
 {% extends parent %}
 
 {% block main %}
-        <hr />
+    <hr />
 
     <div class="noPagBreak">
 
@@ -86,9 +86,8 @@ content_type: preventivi
     <div class="noPagBreak">
         <a name="documentazione"></a>
         <h2 class="subheader"><i class="fa fa-folder-open-o"></i> Documentazione allegata</h2>
+
         <div class="panel">
-
-
             <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
                 {% for documento in preventivi.documenti %}
                     <li>
@@ -100,6 +99,7 @@ content_type: preventivi
                     </li>
                 {% endfor %}
             </ul>
+
             <div>
                 <p><i>Di seguito l'elenco dei consumabili e dei relativi costi sulla base del listino attualmente in vigore:</i></p>
                 <ol>
@@ -181,7 +181,10 @@ content_type: preventivi
                         <i>Invia l'ordine via Fax:</i>
                             <ol>
                                 <li>
-                                    Scarica il documento da compilare e firmare
+                                    Scarica questo preventivo in PDF
+                                </li>
+                                <li>
+                                    Compila l'ultima pagina del preventivo con i tuoi dati
                                 </li>
                                 <li>
                                     Invia il documento e <strong>copia dei dati del bonifico</strong> al seguente numero di fax: <strong>{{numero_fax}}</strong>
@@ -233,6 +236,74 @@ content_type: preventivi
     </div>
     <div class="noPagBreak">
 
+    {% if isPdf == 1 %}
+        <h2 class="subheader"><i class="fa fa-keyboard-o"></i> Inserisci i tuoi dati</h2>
+
+        <p><strong style="font-size:18px; line-height:18px">Dati di Fatturazione</strong></p>
+        <table border="1" cellpadding="1" cellspacing="1" style="width:100%">
+            <tbody>
+                <tr>
+                    <td colspan="2">Ragione Sociale:</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Nome e Cognome del referente:</td>
+                </tr>
+                <tr>
+                    <td>Partita IVA:</td>
+                    <td>Codice Fiscale:</td>
+                </tr>
+                <tr>
+                    <td>Indirizzo:</td>
+                    <td>Comune:</td>
+                </tr>
+                <tr>
+                    <td>Cap:</td>
+                    <td>Provincia:</td>
+                </tr>
+                <tr>
+                    <td>Telefono:</td>
+                    <td>Email:</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong style="font-size:18px; line-height:18px">Dati di Spedizione</strong></p>
+
+        <table border="1" cellpadding="1" cellspacing="1" style="width:100%">
+            <tbody>
+                <tr>
+                    <td colspan="2">Intestazione:</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Nome e Cognome del referente:</td>
+                </tr>
+                <tr>
+                    <td>Indirizzo:</td>
+                    <td>Comune:</td>
+                </tr>
+                <tr>
+                    <td>Cap:</td>
+                    <td>Provincia:</td>
+                </tr>
+                <tr>
+                    <td>Telefono:</td>
+                    <td>Email:</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong style="font-size:18px; line-height:18px">Firmato da:</strong></p>
+        <table border="1" cellpadding="1" cellspacing="1" style="width:100%">
+            <tbody>
+                <tr>
+                    <td>Firma:</td>
+                    <td>Data:</td>
+                </tr>
+            </tbody>
+        </table>
+
+    {% else %}
+
         <a name="formOrdine"></a>
         <h2 class="subheader"><i class="fa fa-keyboard-o"></i> Ordina online</h2>
 
@@ -261,6 +332,7 @@ content_type: preventivi
                 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
                 })(document, 'script');</script>
         </div>
+    {% endif %}
 
     </div>
 
