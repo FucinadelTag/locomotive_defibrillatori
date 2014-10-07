@@ -42,19 +42,19 @@ fields:
     text_formatting: html
 - imponibile:
     label: Imponibile
-    type: money
+    type: float
     required: false
     unique: false
     localized: false
 - iva:
     label: IVA (22%)
-    type: money
+    type: float
     required: false
     unique: false
     localized: false
 - totale_iva_inclusa:
     label: Totale (IVA Inclusa)
-    type: money
+    type: float
     required: false
     unique: false
     localized: false

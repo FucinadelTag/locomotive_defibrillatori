@@ -13,10 +13,13 @@ header {
 
 }
 
-.magellan-container {
-  padding: 0 !important;
-  background: #fff; }
+.subtext {
+    font-style: italic;
+    font-size: em-calc(13px);
+    color: $subheader-font-color;
+}
 
-.sub-nav {
-  background-color: #f2f2f2;
-  padding: 5px 5px 5px 0; }
+.tesxtLowColor {
+    color: $subheader-font-color;
+}
+

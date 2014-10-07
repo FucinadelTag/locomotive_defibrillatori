@@ -1,26 +1,11 @@
 ---
-title: Content type template
-
-# true if the page is included in the menu
-listed: true
-
-# true if the page is published
+title: preventivi type template
+listed: false
 published: true
-
-# position among sibling pages
-# position: 1
-
-# sets a redirection to the given url (301)
-# redirect_url: "<url to a page or to a remote url>"
-
-# content type that this page is templatizing
+cache_strategy: none
+response_type: text/html
 content_type: preventivi
-
-# editable_elements:
-#   'some_block/some_slug': "<text>"
-#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
 ---
-
 {% capture numero_fax %}
     800 782 217
 {% endcapture %}
@@ -37,19 +22,25 @@ content_type: preventivi
     'field123={{preventivi.cliente.email}}&field121={{codice_preventivo}}&Field119={{preventivi.cliente.ragione_sociale}}&field340={{preventivi.totale_iva_inclusa}}&Field363=Italia'
 {% endcapture %}
 
-{% extends parent %}
+{% capture riga_totale %}
+<tr>
+    <td style="text-align:right" colspan="3"><h3>TOTALE:</h3></td>
+    <td style="text-align:right" colspan="2"><h3>{{preventivi.totale_iva_inclusa}} <i class="fa fa-eur"></i></h3></td>
+</tr>
+{% endcapture %}
 
-{{defaultValues}}
+
+{% extends parent %}
 
 {% block main %}
         <hr />
 
-        <div>
-            <h5><i>Bologna, {{ data_preventivo }}</i></h5>
+        <div class="tesxtLowColor">
+            <i>Bologna, {{ data_preventivo }}</i>
             <p>{{ preventivi.messaggio}}</p>
         </div>
 
-        <h2 class="subheader">{{ titolo_pagina }}:</h2>
+        <h2><i class="fa fa-eur"></i> {{ titolo_pagina }}:</h2>
 
 
         <table>
@@ -57,19 +48,19 @@ content_type: preventivi
                 <tr>
                     <th width="70%">Nome/Descrizione prodotti</th>
                     <th style="text-align:right" width="10%">Prezzo</th>
-                    <th style="text-align:right" width="10%">Quantità</th>
+                    <th style="text-align:right" width="5%">Quantità</th>
                     <th style="text-align:right" width="5%">Sconto</th>
-                    <th style="text-align:right" width="5%">Subtotale</th>
+                    <th style="text-align:right" width="10%">Subtotale</th>
                 </tr>
             </thead>
             <tbody>
                 {% for riga_preventivo in preventivi.righe_preventivo %}
                     <tr>
                         <td><h5>{{riga_preventivo.nome_prodotto}}</h4></td>
-                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo}}</h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo}} <i class="fa fa-eur"></i></h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.quantita}}</h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.percentuale_sconto}}%</h5></td>
-                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}}</h5></td>
+                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}} <i class="fa fa-eur"></i></h5></td>
                     </tr>
                     <tr>
                         <td colspan="3">{{riga_preventivo.descrizione}}</td>
@@ -78,28 +69,25 @@ content_type: preventivi
                 {% endfor %}
                     <tr>
                         <td style="text-align:right" colspan="3">Imponibile</td>
-                        <td style="text-align:right" colspan="2"><h5>{{preventivi.imponibile}}</h5></td>
+                        <td style="text-align:right" colspan="2"><h5>{{preventivi.imponibile}} <i class="fa fa-eur"></i></h5></td>
                     </tr>
                     <tr>
                         <td style="text-align:right" colspan="3">IVA 22%</td>
-                        <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}}</h5></td>
+                        <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}} <i class="fa fa-eur"></i></h5></td>
                     </tr>
-                    <tr>
-                        <td style="text-align:right" colspan="3"><h3>TOTALE:</h3></td>
-                        <td style="text-align:right" colspan="2"><h3>{{preventivi.totale_iva_inclusa}}</h3></td>
-                    </tr>
+                    {{ riga_totale }}
             </tbody>
         </table>
         <hr>
         <a name="documentazione"></a>
-        <h2 class="subheader">Documentazione allegata:</h2>
+        <h2 class="subheader"><i class="fa fa-folder-open-o"></i> Documentazione allegata:</h2>
         <div class="panel">
 
 
             <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
                 {% for documento in preventivi.documenti %}
                     <li>
-                        <h5>{{documento.nome}}</h5>
+                        <h5><i class="fa fa-file-pdf-o"></i> {{documento.nome}}</h5>
                         <p>
                             {{documento.descrizione}}
                         </p>
@@ -126,9 +114,9 @@ content_type: preventivi
         <hr>
 
         <a name="comeOrdinare"></a>
-        <h2 class="subheader">Come Ordinare:</h2>
+        <h2 class="subheader"><i class="fa fa-shopping-cart"></i> Come Ordinare:</h2>
         <div class="panel">
-            <h4>Pagamento con Carta di Credito online</h4>
+            <h4><i class="fa fa-credit-card"></i> Pagamento con Carta di Credito online</h4>
             <hr>
 
 
@@ -142,12 +130,15 @@ content_type: preventivi
                                 <li>
                                     <a href="#formOrdine">Compila il modulo online in ogni sua parte</a>
                                 </li>
+                                <li>
+                                    Inserisci i dati della tua carta di credito quando richiesto
+                                </li>
                             </ol>
                     </li>
                 </ul>
         </div>
         <div class="panel">
-            <h4>Pagamento con Bonifico Bancario</h4>
+            <h4><i class="fa fa-university"></i> Pagamento con Bonifico Bancario</h4>
             <hr>
 
 
@@ -194,7 +185,7 @@ content_type: preventivi
                 </ul>
         </div>
         <div class="panel">
-            <h4>Locazione operativa</h4>
+            <h4><i class="fa fa-money"></i> Locazione operativa</h4>
             <hr>
 
 
@@ -220,7 +211,7 @@ content_type: preventivi
         </div>
         <hr>
         <a name="contatti"></a>
-        <h2 class="subheader">Contatti:</h2>
+        <h2 class="subheader"><i class="fa fa-envelope-o"></i> Contatti:</h2>
         <div class="panel">
             <h5><i>Per qualsiasi dubbio o domanda rivolgersi a:</i></h5>
             <strong>Giulio Locatelli</strong><br/>
@@ -231,7 +222,7 @@ content_type: preventivi
         <hr>
 
         <a name="formOrdine"></a>
-        <h2 class="subheader">ORDINA ONLINE:</h2>
+        <h2 class="subheader"><i class="fa fa-keyboard-o"></i> ORDINA ONLINE:</h2>
 
 
         <div class="panel">

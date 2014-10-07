@@ -2,5 +2,5 @@
 name: defibrillatori
 locales: [it]
 subdomain: defibrillatori
-domains: [defibrillatori.locomotivehosting.com]
+domains: [preventivi.defibrillatori-online.com, defibrillatori.locomotivehosting.com]
 timezone: Rome
