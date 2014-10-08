@@ -87,3 +87,9 @@ fields:
     required: false
     unique: false
     localized: false
+- url_pdf_download:
+    label: url_pdf_download
+    type: string
+    required: false
+    unique: false
+    localized: false

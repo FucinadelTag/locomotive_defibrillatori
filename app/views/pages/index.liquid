@@ -6,7 +6,6 @@ cache_strategy: none
 response_type: text/html
 position: 0
 ---
-
 {% if params['pdf'] == '1'%}
   {% assign isPdf = 1 %}
 {% else %}
@@ -71,6 +70,12 @@ position: 0
                     Codice: <strong>{{ codice_preventivo }}</strong><br />
                     Data: <strong>{{ data_preventivo }}</strong><br />
                     Validità: <strong>90 Giorni</strong>
+                    {% if isPdf == 0 %}
+                        <hr>
+                        <p>
+                          <a href="{{ preventivi.url_pdf_download}}" class="button radius round">Scarica il PDF</a>
+                        </p>
+                    {% endif %}
                 </i>
             </div>
     </header>
@@ -99,7 +104,7 @@ position: 0
 
   </div>
 
-
+{% if isPdf == 0 %}
 
 
   <footer class="row">
@@ -114,6 +119,8 @@ position: 0
         </div>
     </div>
   </footer>
+{% endif %}
+
 
 
     <!-- Javascripts -->

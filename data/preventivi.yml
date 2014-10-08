@@ -1,21 +1,101 @@
 ---
-- '202035670':
-    _slug: '202035670'
-    titolo_leggibile: Preventivo pre0000045
+- '204237026':
+    _slug: '204237026'
+    titolo_leggibile: Preventivo pre0000054
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 1036.64
+    iva: 228.0608
+    totale_iva_inclusa: 1264.7008
+    cliente: lorenzo-caldara
+    podio_item_id: 204237026
+    public_id: pre0000054
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbQzcyVUE3WmRzY0k&export=download
+- '204228049':
+    _slug: '204228049'
+    titolo_leggibile: Preventivo pre0000053
+    messaggio: Gentile **Lorenzo Caldara**a seguito della sua gradita richiesta le
+      sottopongo la nostra migliore proposta economica per il defibrillatore Philips.
+    note: "<p>Provaccia note</p>"
+    imponibile: 1036.64
+    iva: 228.0608
+    totale_iva_inclusa: 1264.7008
+    cliente: lorenzo-caldara
+    podio_item_id: 204228049
+    public_id: pre0000053
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbWm1xZzZnM3Z0RjA&export=download
+- '204222695':
+    _slug: '204222695'
+    titolo_leggibile: Preventivo pre0000052
+    messaggio: Gentile **Lorenzo Caldara**a seguito della sua gradita richiesta le
+      sottopongo la nostra migliore proposta economica per il defibrillatore Philips.
+    note: "<p>Provaccia note</p>"
+    imponibile: 1036.64
+    iva: 228.0608
+    totale_iva_inclusa: 1264.7008
+    cliente: lorenzo-caldara
+    podio_item_id: 204222695
+    public_id: pre0000052
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbZkMwY1ZwcVNVb3c&export=download
+- '204216107':
+    _slug: '204216107'
+    titolo_leggibile: Preventivo pre0000051
+    messaggio: Ciao Lorenzo CaldaraPalla awewe qweqweqw
+    note: "<p>Provaccia note</p>"
+    imponibile: 2480.0
+    iva: 545.6
+    totale_iva_inclusa: 3025.6
+    cliente: lorenzo-caldara
+    podio_item_id: 204216107
+    public_id: pre0000051
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbM05CODZPejZRSVk&export=download
+- '204147416':
+    _slug: '204147416'
+    titolo_leggibile: Preventivo pre0000049
+    messaggio: Ciao Lorenzo Caldara palla awewe qweqweqw
+    note: "<p>Provaccia note</p>"
+    imponibile: 2480.0
+    iva: 545.6
+    totale_iva_inclusa: 3025.6
+    cliente: lorenzo-caldara
+    podio_item_id: 204147416
+    public_id: pre0000049
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbaFB5di1QUmNkWmc&export=download
+- '204147238':
+    _slug: '204147238'
+    titolo_leggibile: Preventivo pre0000048
     messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
     note: "<p>Provaccia note</p>"
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
     cliente: lorenzo-caldara
-    podio_item_id: 202035670
-- '202035577':
-    _slug: '202035577'
-    titolo_leggibile: Preventivo pre0000044
+    podio_item_id: 204147238
+    public_id: pre0000048
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbOEZvX0ZMdzVuY1U&export=download
+- '204127691':
+    _slug: '204127691'
+    titolo_leggibile: Preventivo pre0000047
     messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
     note: "<p>Provaccia note</p>"
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
     cliente: lorenzo-caldara
-    podio_item_id: 202035577
+    podio_item_id: 204127691
+    public_id: pre0000047
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbdmJaaXhTZXZGWjA&export=download
+- '204127522':
+    _slug: '204127522'
+    titolo_leggibile: Preventivo pre0000046
+    messaggio: Ciao {{nome}} {{cognome}}Palla awewe qweqweqw
+    note: "<p>Provaccia note</p>"
+    imponibile: 2480.0
+    iva: 545.6
+    totale_iva_inclusa: 3025.6
+    cliente: lorenzo-caldara
+    podio_item_id: 204127522
+    public_id: pre0000046
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbR25qcHVrbHBPRUk&export=download

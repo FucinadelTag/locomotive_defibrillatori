@@ -14,9 +14,9 @@ content_type: preventivi
     {{ preventivi.titolo_leggibile | escape }}
 {% endcapture %}
 {% capture codice_preventivo %}{{ preventivi.public_id | escape }}{% endcapture %}
-{% capture data_preventivo %}
-    {{ preventivi.created_at | localized_date: '%d-%b-%Y' }}
-{% endcapture %}
+{% capture data_preventivo %}{{ preventivi.created_at | localized_date: '%d-%b-%Y' }}{% endcapture %}
+
+{% capture urlFormOrdine %}http://preventivi.defibrillatori-online.com/preventivi/{{preventivi._slug}}#formOrdine{% endcapture %}
 
 {% capture defaultValues %}
     'field123={{preventivi.cliente.email}}&field121={{codice_preventivo}}&Field119={{preventivi.cliente.ragione_sociale}}&field340={{preventivi.totale_iva_inclusa}}&Field363=Italia'
@@ -24,8 +24,8 @@ content_type: preventivi
 
 {% capture riga_totale %}
 <tr>
-    <td style="text-align:right" colspan="3"><h3>TOTALE:</h3></td>
-    <td style="text-align:right" colspan="2"><h3>{{preventivi.totale_iva_inclusa}} <i class="fa fa-eur"></i></h3></td>
+    <td style="text-align:right" colspan="2"><h3>TOTALE:</h3></td>
+    <td style="text-align:right" colspan="3"><h3>{{preventivi.totale_iva_inclusa}} <i class="fa fa-eur"></i></h3></td>
 </tr>
 {% endcapture %}
 
@@ -49,11 +49,11 @@ content_type: preventivi
         <table>
             <thead>
                 <tr>
-                    <th width="65%">Nome/Descrizione prodotti</th>
+                    <th width="60%">Nome/Descrizione prodotti</th>
                     <th style="text-align:right" width="15%">Prezzo</th>
                     <th style="text-align:right" width="5%">Quantità</th>
                     <th style="text-align:right" width="5%">Sconto</th>
-                    <th style="text-align:right" width="10%">Subtotale</th>
+                    <th style="text-align:right" width="15%">Subtotale</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,8 +66,7 @@ content_type: preventivi
                         <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}}<i class="fa fa-eur"></i></h5></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><i>{{riga_preventivo.descrizione}}</i></td>
-                        <td colspan="2"></td>
+                        <td colspan="5"><span class="subtext">{{riga_preventivo.descrizione}}</span></td>
                     </tr>
                 {% endfor %}
                     <tr>
@@ -135,7 +134,7 @@ content_type: preventivi
                                     Accertati di avere una delle seguenti carte di credito: <strong>VISA - MASTERCARD - AMERICAN EXPRESS</strong>
                                 </li>
                                 <li>
-                                    <a href="#formOrdine">Compila il modulo online in ogni sua parte</a>
+                                    <a href="{{urlFormOrdine}}">Compila il modulo online in ogni sua parte</a>
                                 </li>
                                 <li>
                                     Inserisci i dati della tua carta di credito quando richiesto
@@ -174,17 +173,17 @@ content_type: preventivi
                         <i>Completa l'ordine Online:</i>
                             <ol>
                                 <li>
-                                    <a href="#formOrdine">Compila il modulo online in ogni sua parte</a>
+                                    <a href="{{urlFormOrdine}}">Compila il modulo online in ogni sua parte</a>
                                 </li>
                             </ol>
                         <hr>
                         <i>Invia l'ordine via Fax:</i>
                             <ol>
                                 <li>
-                                    Scarica questo preventivo in PDF
+                                    <a href="{{ preventivi.url_pdf_download}}">Scarica questo preventivo in PDF</a>
                                 </li>
                                 <li>
-                                    Compila l'ultima pagina del preventivo con i tuoi dati
+                                    Stampalo e compila l'ultima pagina del preventivo con i tuoi dati
                                 </li>
                                 <li>
                                     Invia il documento e <strong>copia dei dati del bonifico</strong> al seguente numero di fax: <strong>{{numero_fax}}</strong>
