@@ -1,4 +1,150 @@
 ---
+- '204889755':
+    _slug: '204889755'
+    titolo_leggibile: Preventivo 0000065
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204889755
+    public_id: '0000065'
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbZEZMUU5udnhibDg&export=download
+    stato: Attivo
+- '204820927':
+    _slug: '204820927'
+    titolo_leggibile: Preventivo 0000064
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204820927
+    public_id: '0000064'
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbMUtBb0o3QWZLbzg&export=download
+    stato: Attivo
+- '204820284':
+    _slug: '204820284'
+    titolo_leggibile: Preventivo pre0000063
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204820284
+    public_id: pre0000063
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbMmNZMWNqaWw3aDg&export=download
+    stato: Bozza
+- '204819767':
+    _slug: '204819767'
+    titolo_leggibile: Preventivo pre0000062
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204819767
+    public_id: pre0000062
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbaTZFX2E5Y1lTVW8&export=download
+    stato: Bozza
+- '204819520':
+    _slug: '204819520'
+    titolo_leggibile: Preventivo pre0000061
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204819520
+    public_id: pre0000061
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbbkRDQ1VHTnh0UFE&export=download
+    stato: Bozza
+- '204690958':
+    _slug: '204690958'
+    titolo_leggibile: Preventivo pre0000060
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204690958
+    public_id: pre0000060
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbRU1VSWsxRjc0dk0&export=download
+    stato: Attivo
+- '204690166':
+    _slug: '204690166'
+    titolo_leggibile: Preventivo pre0000059
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 2073.28
+    iva: 456.1216
+    totale_iva_inclusa: 2529.4016
+    cliente: '195716718'
+    podio_item_id: 204690166
+    public_id: pre0000059
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbQnM5S2FBZTlEVkE&export=download
+- '204533279':
+    _slug: '204533279'
+    titolo_leggibile: Preventivo pre0000058
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 1036.64
+    iva: 228.0608
+    totale_iva_inclusa: 1264.7008
+    cliente: '195716718'
+    podio_item_id: 204533279
+    public_id: pre0000058
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbRmcyZzBMcnlYbzA&export=download
+- '204532355':
+    _slug: '204532355'
+    titolo_leggibile: Preventivo pre0000056
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 1036.64
+    iva: 228.0608
+    totale_iva_inclusa: 1264.7008
+    cliente: '195716718'
+    podio_item_id: 204532355
+    public_id: pre0000056
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbaVoxUW5lMnlyRjg&export=download
+- '204532064':
+    _slug: '204532064'
+    titolo_leggibile: Preventivo pre0000055
+    messaggio: "<p>Gentile&nbsp;<strong>Lorenzo Caldara</strong></p><p>a seguito della
+      sua gradita richiesta le sottopongo la nostra migliore proposta economica per
+      il defibrillatore Philips.<br /></p>"
+    note: "<p>Provaccia note</p>"
+    imponibile: 1036.64
+    iva: 228.0608
+    totale_iva_inclusa: 1264.7008
+    cliente: '195716718'
+    podio_item_id: 204532064
+    public_id: pre0000055
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbcEZPRkQtc3NrR1E&export=download
 - '204237026':
     _slug: '204237026'
     titolo_leggibile: Preventivo pre0000054
@@ -9,10 +155,10 @@
     imponibile: 1036.64
     iva: 228.0608
     totale_iva_inclusa: 1264.7008
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204237026
     public_id: pre0000054
-    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbQzcyVUE3WmRzY0k&export=download
+    url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbQ2RIdkRCWnJ4OEk&export=download
 - '204228049':
     _slug: '204228049'
     titolo_leggibile: Preventivo pre0000053
@@ -22,7 +168,7 @@
     imponibile: 1036.64
     iva: 228.0608
     totale_iva_inclusa: 1264.7008
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204228049
     public_id: pre0000053
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbWm1xZzZnM3Z0RjA&export=download
@@ -35,7 +181,7 @@
     imponibile: 1036.64
     iva: 228.0608
     totale_iva_inclusa: 1264.7008
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204222695
     public_id: pre0000052
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbZkMwY1ZwcVNVb3c&export=download
@@ -47,7 +193,7 @@
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204216107
     public_id: pre0000051
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbM05CODZPejZRSVk&export=download
@@ -59,7 +205,7 @@
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204147416
     public_id: pre0000049
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbaFB5di1QUmNkWmc&export=download
@@ -71,7 +217,7 @@
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204147238
     public_id: pre0000048
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbOEZvX0ZMdzVuY1U&export=download
@@ -83,7 +229,7 @@
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204127691
     public_id: pre0000047
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbdmJaaXhTZXZGWjA&export=download
@@ -95,7 +241,7 @@
     imponibile: 2480.0
     iva: 545.6
     totale_iva_inclusa: 3025.6
-    cliente: lorenzo-caldara
+    cliente: '195716718'
     podio_item_id: 204127522
     public_id: pre0000046
     url_pdf_download: https://docs.google.com/uc?id=0B_Jild_otOQbR25qcHVrbHBPRUk&export=download

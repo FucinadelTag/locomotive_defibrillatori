@@ -9,13 +9,3 @@ position: 1
 ---
 {% extends parent %}
 
-{% block main %}
-  <div class="posts">
-    {% for cliente in contents.clienti %}
-      <div class="post-listing">
-        <h3>{{ cliente.nome_e_cognome | escape }}</h3>
-        <p><a href="/clienti/{{ cliente._slug }}">Read More</a></p>
-      </div>
-    {% endfor %}
-  </div>
-{% endblock %}

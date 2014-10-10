@@ -33,6 +33,66 @@ content_type: preventivi
 {% extends parent %}
 
 {% block main %}
+
+
+    {% if isPdf == 0 %}
+    <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <ul class="title-area">
+            <li class="name">
+                <h1><a href="#top">{{ titolo_pagina }}</a></h1>
+            </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li><a href="#formOrdine"><i class="fa fa-keyboard-o"></i> Ordina Online</a></li>
+                <li><a href="#top"><i class="fa fa-eur"></i> Prezzi</a></li>
+                <li><a href="#documentazione"><i class="fa fa-book"></i> Documentazione</a></li>
+                <li><a href="#comeOrdinare"><i class="fa fa-shopping-cart"></i> Come Ordinare</a></li>
+                <li><a href="#contatti"><i class="fa fa-envelope-o"></i> Contatti</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Azioni</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ preventivi.url_pdf_download}}"><i class="fa fa-file-pdf-o"></i> Scarica il PDF</a></li>
+                        <li><a href="/clienti/{{ preventivi.cliente._slug}}"><i class="fa fa-th-list"></i> </i>Elenco preventivi</a></li>
+                    </ul>
+      </li>
+            </ul>
+        </section>
+    </nav>
+    </div>
+    {% endif %}
+
+    <header>
+
+            <div class="large-9 medium-9 small-9 columns end subtext">
+                {% include 'intestazione' %}
+            </div>
+
+            <div class="large-3 medium-3 small-3 columns right subtext">
+                <i>
+                    Codice: <strong>{{ codice_preventivo }}</strong><br />
+                    Data: <strong>{{ data_preventivo }}</strong><br />
+                    Validità: <strong>90 Giorni</strong><br />
+                    Stato: <strong>{{ preventivi.stato }}</strong>
+                    <br>
+                    {% if isPdf == 0 %}
+                        <hr>
+                        <a href="{{ preventivi.url_pdf_download}}" class="button radius round"><i class="fa fa-file-pdf-o"></i> Scarica il PDF</a><br>
+                    {% endif %}
+
+                </i>
+            </div>
+    </header>
+
+
+
+<div class="row">
+<div class="large-12 columns">
     <hr />
 
     <div class="noPagBreak">
@@ -43,7 +103,7 @@ content_type: preventivi
             <p>{{ preventivi.messaggio}}</p>
         </div>
 
-        <h2><i class="fa fa-eur"></i> {{ titolo_pagina }}</h2>
+        <h2><i class="fa fa-eur"></i> {{ titolo_pagina }} | <i>{{ preventivi.stato }}</i></h2>
 
 
         <table>
@@ -84,7 +144,7 @@ content_type: preventivi
     </div>
     <div class="noPagBreak">
         <a name="documentazione"></a>
-        <h2 class="subheader"><i class="fa fa-folder-open-o"></i> Documentazione allegata</h2>
+        <h2 class="subheader"><i class="fa fa-book"></i> Documentazione allegata</h2>
 
         <div class="panel">
             <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
@@ -203,7 +263,7 @@ content_type: preventivi
                         <i>Paga in 24 comode rate mensili:</i>
                             <ol>
                                 <li>
-                                    Scarica il documento da compilare e firmare
+                                    <a href="https://s3-eu-west-1.amazonaws.com/fucinadeltag/pdf/philips/Noleggio24m.pdf" target="_blank"> Scarica il documento da compilare e firmare</a>
                                 </li>
                                 <li>
                                     Procurati tutti i documenti richiesti
@@ -224,13 +284,7 @@ content_type: preventivi
 
         <a name="contatti"></a>
         <h2 class="subheader"><i class="fa fa-envelope-o"></i> Contatti</h2>
-        <div class="panel">
-            <h5><i>Per qualsiasi dubbio o domanda rivolgersi a:</i></h5>
-            <strong>Giulio Locatelli</strong><br/>
-            Telefono: <strong>800 782 217</strong><br/>
-            Email: <strong>giulio.locatelli@defibrillatori-online.com</strong>
-        </div>
-
+        {% include 'contatti' %}
         <hr>
     </div>
     <div class="noPagBreak">
@@ -334,5 +388,7 @@ content_type: preventivi
     {% endif %}
 
     </div>
+</div>
+</div>
 
 {% endblock %}

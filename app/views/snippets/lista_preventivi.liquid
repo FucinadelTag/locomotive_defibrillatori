@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="large-4 columns">
+        {{ preventivo.titolo_leggibile | escape }} | <i>{{ preventivo.stato | escape }}</i>
+    </div>
+    <div class="large-3 columns">
+        <i>Prezzo</i>: <strong>{{ preventivo.imponibile | escape }}</strong> <i class="fa fa-eur"> + <i>IVA</i></i>
+    </div>
+    <div class="large-3 columns">
+        <i class="fa fa-folder-open-o"></i> <a href="/preventivi/{{ preventivo._slug }}">Apri il preventivo</a>
+    </div>
+    <div class="large-2 columns">
+        <i class="fa fa-file-pdf-o"></i> <a href="{{ preventivo.url_pdf_download}}">Scarica il PDF</a>
+    </div>
+
+</div>
+<hr>

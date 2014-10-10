@@ -93,3 +93,9 @@ fields:
     required: false
     unique: false
     localized: false
+- stato:
+    label: stato
+    type: string
+    required: false
+    unique: false
+    localized: false

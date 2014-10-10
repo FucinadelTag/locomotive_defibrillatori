@@ -7,16 +7,11 @@ cache_strategy: none
 response_type: text/html
 position: 0
 ---
+{% if params['pdf'] == '1'%}
+  {% assign isPdf = 1 %}
+{% else %}
+  {% assign isPdf = 0 %}
+{% endif %}
+
 {% extends parent %}
 
-{% block main %}
-  <div class="posts">
-    {% for preventivo in contents.preventivi %}
-      <div class="post-listing">
-        <h3>{{ preventivo.titolo | escape }}</h3>
-        <div class="teaser">{{ preventivo.messaggio }}</div>
-        <p><a href="/preventivi/{{ preventivo._slug }}">Read More</a></p>
-      </div>
-    {% endfor %}
-  </div>
-{% endblock %}

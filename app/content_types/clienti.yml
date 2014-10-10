@@ -5,6 +5,12 @@ label_field_name: nome_e_cognome
 order_by: created_at
 order_direction: asc
 fields:
+- title:
+    label: Title
+    type: string
+    required: false
+    unique: false
+    localized: false
 - nome_e_cognome:
     label: Nome e Cognome
     type: string

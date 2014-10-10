@@ -8,20 +8,58 @@ response_type: text/html
 position: 100
 content_type: clienti
 ---
+
+{% capture titolo_pagina %}
+    {{ clienti.ragione_sociale | escape }}
+{% endcapture %}
+
 {% extends parent %}
 
 {% block main %}
 
-  <h3>{{ clienti.nome_e_cognome | escape }}</h3>
-
-    <div class="posts">
-    {% for preventivo in contents.preventivi %}
-      <div class="post-listing">
-        <h3>{{ preventivo.titolo_leggibile | escape }}</h3>
-        <div class="teaser">{{ preventivo.messaggio }}</div>
-        <p><a href="/preventivi/{{ preventivo._slug }}">Read More</a></p>
-      </div>
-    {% endfor %}
+<header class="subtext">
+    <div class="large-3 medium-5 small-5 columns">
+    {% include 'intestazione' %}
     </div>
+    <div class="large-5 medium-4 small-4 columns subtext">
+        {% include 'contatti' %}
+    </div>
+    <div class="large-3 medium-3 small-3 columns">
+        <i>
+            Cliente: <strong>{{ clienti.nome_e_cognome | escape }}</strong><br />
+            Codice: <strong>{{ clienti.lead_id }}</strong><br />
+            Data: <strong>{{ clienti.created_at | localized_date: '%d-%b-%Y' }}</strong><br />
+        </i>
+    </div>
+
+</header>
+
+
+
+<div class="row">
+    <div class="large-12 columns">
+    <hr>
+            <h1>Elenco Preventivi Attivi</h1>
+            <hr>
+
+            {% for preventivo in contents.preventivi %}
+                {% if preventivo.stato == 'Attivo' %}
+                    {% include 'lista_preventivi' with preventivo %}
+                {% endif %}
+            {% endfor %}
+
+            <h2>Storico Preventivi</h1>
+            <hr>
+
+            {% for preventivo in contents.preventivi %}
+                {% if preventivo.stato != 'Attivo' %}
+                    {% if preventivo.stato != 'Bozza' %}
+                        {% include 'lista_preventivi' with preventivo %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}
