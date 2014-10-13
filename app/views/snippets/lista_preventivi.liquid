@@ -3,7 +3,7 @@
         {{ preventivo.titolo_leggibile | escape }} | <i>{{ preventivo.stato | escape }}</i>
     </div>
     <div class="large-3 columns">
-        <i>Prezzo</i>: <strong>{{ preventivo.imponibile | escape }}</strong> <i class="fa fa-eur"> + <i>IVA</i></i>
+        <i>Prezzo</i>: <strong>{{ preventivo.imponibile | money: "precision:2, unit:'€', separator:',', delimiter:'.'"}}</strong> + <i>IVA</i>
     </div>
     <div class="large-3 columns">
         <i class="fa fa-folder-open-o"></i> <a href="/preventivi/{{ preventivo._slug }}">Apri il preventivo</a>

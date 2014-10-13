@@ -20,4 +20,5 @@ group :misc do
   # Add your extra gems here
   # gem 'susy', require: 'susy'
   # gem 'redcarpet', require: 'redcarpet'
+  gem 'locomotivecms_liquid_extensions', github: 'locomotivecms/liquid_extensions'
 end

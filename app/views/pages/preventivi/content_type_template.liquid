@@ -25,7 +25,7 @@ content_type: preventivi
 {% capture riga_totale %}
 <tr>
     <td style="text-align:right" colspan="2"><h3>TOTALE:</h3></td>
-    <td style="text-align:right" colspan="3"><h3>{{preventivi.totale_iva_inclusa}} <i class="fa fa-eur"></i></h3></td>
+    <td style="text-align:right" colspan="3"><h3>{{ preventivi.totale_iva_inclusa | money: "precision:2, unit:'€', separator:',', delimiter:'.'"}}</h3></td>
 </tr>
 {% endcapture %}
 
@@ -120,10 +120,10 @@ content_type: preventivi
                 {% for riga_preventivo in preventivi.righe_preventivo %}
                     <tr>
                         <td><h5><i class="fa fa-check-circle-o"></i> {{riga_preventivo.nome_prodotto}}</h4></td>
-                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo}}<i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right"><h5>{{ riga_preventivo.prezzo | money: "precision:2, unit:'€', separator:',', delimiter:'.'"}}</h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.quantita}}</h5></td>
                         <td style="text-align:right"><h5>{{riga_preventivo.percentuale_sconto}}%</h5></td>
-                        <td style="text-align:right"><h5>{{riga_preventivo.prezzo_totale}}<i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right"><h5>{{ riga_preventivo.prezzo_totale | money: "precision:2, unit:'€', separator:',', delimiter:'.'"}}</h5></td>
                     </tr>
                     <tr>
                         <td colspan="5"><span class="subtext">{{riga_preventivo.descrizione}}</span></td>
@@ -131,11 +131,11 @@ content_type: preventivi
                 {% endfor %}
                     <tr>
                         <td style="text-align:right" colspan="3">Imponibile</td>
-                        <td style="text-align:right" colspan="2"><h5>{{preventivi.imponibile}}<i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right" colspan="2"><h5>{{ preventivi.imponibile | money: "precision:2, unit:'€', separator:',', delimiter:'.'"}}</h5></td>
                     </tr>
                     <tr>
                         <td style="text-align:right" colspan="3">IVA 22%</td>
-                        <td style="text-align:right" colspan="2"><h5>{{preventivi.iva}}<i class="fa fa-eur"></i></h5></td>
+                        <td style="text-align:right" colspan="2"><h5>{{ preventivi.iva | money: "precision:2, unit:'€', separator:',', delimiter:'.'"}}</h5></td>
                     </tr>
                     {{ riga_totale }}
             </tbody>

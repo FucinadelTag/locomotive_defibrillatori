@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/locomotivecms/liquid_extensions.git
+  revision: 27a4d60f01c23067f28152626a02d798dd646c71
+  specs:
+    locomotivecms_liquid_extensions (1.2.0)
+      locomotivecms-solid (~> 0.2.2.1)
+      pony (~> 1.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -90,10 +98,14 @@ GEM
       thor
       will_paginate (~> 3.0.3)
     logger (1.2.8)
+    mail (2.6.1)
+      mime-types (>= 1.16, < 3)
     mime-types (1.25.1)
     multi_json (1.8.4)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    pony (1.11)
+      mail (>= 2.0)
     rack (1.5.2)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -130,6 +142,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  locomotivecms_liquid_extensions!
   locomotivecms_wagon (= 1.4.0)
   rb-fsevent (~> 0.9.1)
   rb-inotify (~> 0.9)
